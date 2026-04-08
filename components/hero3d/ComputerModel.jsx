@@ -302,8 +302,14 @@ async function resolveUsableAssetPath(paths) {
       const headResponse = await fetch(path, { method: "HEAD" });
       if (!headResponse.ok) continue;
 
-      const contentLength = Number(headResponse.headers.get("content-length") || 0);
-      if (contentLength > 1024) return path;
+      const contentLengthHeader = headResponse.headers.get("content-length");
+      const contentLength = Number(contentLengthHeader || 0);
+
+      // Normal GLB assets are large binaries. We only do extra inspection for
+      // suspiciously tiny files that may actually be Git LFS pointer text.
+      if (!contentLengthHeader || contentLength > 1024) {
+        return path;
+      }
 
       const textResponse = await fetch(path, { method: "GET" });
       if (!textResponse.ok) continue;
@@ -358,4 +364,6 @@ export default function ComputerModel({ modelConfig, onModelClick, interactionPr
 
 useGLTF.preload("/hero/mr-mime-pokemon-reboot.glb");
 useGLTF.preload("/hero/computer.glb");
+useGLTF.preload("/hero/homepage-8246.glb");
+useGLTF.preload("/hero/homepage-8246.glb?v=20260408a");
 useGLTF.preload("/hero/singer.glb");
