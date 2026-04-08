@@ -565,10 +565,8 @@ export default function ResumeWebsite({
                         {item.period}
                       </p>
                     )}
-                    <article className="timeline-card motion-card soft-panel rounded-xl p-5" tabIndex={0}>
-                      <h3 className="text-xl font-medium">
-                        {item.role || labels.role} {item.company ? `· ${item.company}` : ""}
-                      </h3>
+                    <article className="timeline-entry px-1 py-1" tabIndex={0}>
+                      <h3 className="text-xl font-medium">{item.company}</h3>
                       <p className="mt-2 text-[var(--muted)]">{item.detail}</p>
                     </article>
                   </div>

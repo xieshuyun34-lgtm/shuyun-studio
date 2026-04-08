@@ -10,7 +10,7 @@ import { getResumeInLanguage } from "../../utils/resumeLanguage";
 import { decodeResumeData, loadEditorDraft, loadResumeSnapshot } from "../../utils/shareResume";
 
 const DARK_THEME_MODEL_PATH = "/hero/mr-mime-pokemon-reboot.glb";
-const LIGHT_THEME_MODEL_PATH = "/hero/singer.glb";
+const LIGHT_THEME_MODEL_PATH = "/hero/homepage-8246.glb?v=20260408a";
 const DARK_THEME_MODEL_SCALE = 1;
 const DARK_THEME_MODEL_Y_OFFSET = 0.51;
 const DARK_THEME_SHADOW_Y_OFFSET = 0.18;

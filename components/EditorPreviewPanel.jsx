@@ -17,6 +17,21 @@ function parsePipeRows(text = "", columns = 4) {
     });
 }
 
+function parseExperienceRows(text = "") {
+  return String(text)
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => {
+      const parts = line.split("|").map((item) => item.trim());
+      if (parts.length === 3) {
+        return [parts[0] || "", "", parts[1] || "", parts[2] || ""];
+      }
+      while (parts.length < 4) parts.push("");
+      return parts.slice(0, 4);
+    });
+}
+
 function PreviewSection({ title, hint, actionLabel, onAction, children }) {
   return (
     <section className="editor-preview-card">
@@ -121,7 +136,7 @@ export default function EditorPreviewPanel({ data, lang = "zh", onSectionNavigat
           attachedMedia: "关联媒体",
         };
 
-  const experiences = parsePipeRows(data.experiences, 4).slice(0, 4);
+  const experiences = parseExperienceRows(data.experiences).slice(0, 4);
   const awards = parsePipeRows(data.awards, 4).slice(0, 4);
   const skills = splitItems(data.skills).slice(0, 8);
   const projects = Array.isArray(data.projectItems)
@@ -215,12 +230,9 @@ export default function EditorPreviewPanel({ data, lang = "zh", onSectionNavigat
         >
           <div className="editor-preview-stack">
             {experiences.map(([period, role, company, detail], index) => (
-              <article key={`${period}-${role}-${index}`} className="editor-preview-list-item">
+              <article key={`${period}-${company}-${index}`} className="editor-preview-list-item">
                 <p className="editor-preview-item-period">{period}</p>
-                <h4 className="editor-preview-item-title">
-                  {role}
-                  {company ? ` · ${company}` : ""}
-                </h4>
+                <h4 className="editor-preview-item-title">{company || role || "-"}</h4>
                 <p className="editor-preview-item-body">{detail}</p>
               </article>
             ))}

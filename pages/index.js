@@ -5,8 +5,7 @@ import HomeHero from "../components/hero3d/HomeHero";
 import heroSceneConfig from "../config/heroScene";
 import { defaultPublishedSlug } from "../data/defaultResumeTemplate";
 
-const GIRL_HERO_MODEL_PATH = "/hero/singer.glb";
-const GIRL_HERO_FALLBACK_MODEL_PATH = "/hero/computer.glb";
+const GIRL_HERO_MODEL_PATH = "/hero/homepage-8246.glb?v=20260408a";
 
 export default function Home() {
   const homeSceneConfig = useMemo(
@@ -16,8 +15,8 @@ export default function Home() {
         ...heroSceneConfig.canvas,
         camera: {
           ...heroSceneConfig.canvas.camera,
-          position: [0, 0.15, 7.3],
-          fov: 24,
+          position: [0, 0.2, 10.5],
+          fov: 32,
         },
       },
       lights: {
@@ -35,20 +34,21 @@ export default function Home() {
         },
         contactShadow: {
           ...heroSceneConfig.lights.contactShadow,
-          position: [0, -2.15, 0],
-          scale: 8.6,
-          opacity: 0.24,
+          position: [0, -1.6, 0],
+          scale: 6.2,
+          opacity: 0.18,
         },
       },
       model: {
         ...heroSceneConfig.model,
         assetPath: GIRL_HERO_MODEL_PATH,
-        fallbackAssetPaths: [GIRL_HERO_FALLBACK_MODEL_PATH],
+        fallbackAssetPaths: [],
         transform: {
           ...heroSceneConfig.model.transform,
-          position: [0, -0.72, 0],
-          rotation: [0, -0.08, 0],
-          targetSize: 3.1,
+          position: [0, -0.08, 0],
+          rotation: [-1.57, 0, 0],
+          targetSize: 2.2,
+          targetBy: "max",
         },
         motion: {
           ...heroSceneConfig.model.motion,
@@ -77,8 +77,8 @@ export default function Home() {
             <p className="landing-kicker">MOTIONCV</p>
             <h1 className="landing-title">首页先出场一个 3D 小女孩，不再是那台电脑。</h1>
             <p className="landing-body">
-              现在首页已经改成独立 3D Hero 入口，并且优先加载 <code>/hero/singer.glb</code>。
-              如果你把真实的小女孩模型文件补回这个路径，它会自动替换当前回退模型。
+              现在首页已经改成独立 3D Hero 入口，并且优先加载 <code>/hero/homepage-8246.glb</code>。
+              首页会继续保留现有的旋转、呼吸和点击交互动效。
             </p>
             <div className="landing-actions">
               <Link href="/editor" className="landing-primary">
