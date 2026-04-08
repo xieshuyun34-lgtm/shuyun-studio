@@ -1,11 +1,48 @@
-import { Suspense } from "react";
+import { Component, Suspense, useMemo, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { ContactShadows, Environment } from "@react-three/drei";
 import { ACESFilmicToneMapping, SRGBColorSpace } from "three";
 import ComputerModel from "./ComputerModel";
 
+class ModelErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error) {
+    this.props.onError?.(error);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.resetKey !== this.props.resetKey && this.state.hasError) {
+      this.setState({ hasError: false });
+    }
+  }
+
+  render() {
+    if (this.state.hasError) return null;
+    return this.props.children;
+  }
+}
+
 export default function HeroCanvas({ config, onModelClick, interactionPreset, interactionToken }) {
   const { canvas, lights, model } = config;
+  const assetCandidates = useMemo(
+    () => [model.assetPath, ...(model.fallbackAssetPaths || [])].filter(Boolean),
+    [model.assetPath, model.fallbackAssetPaths]
+  );
+  const [assetIndex, setAssetIndex] = useState(0);
+  const activeAssetPath = assetCandidates[Math.min(assetIndex, Math.max(assetCandidates.length - 1, 0))] || model.assetPath;
+  const activeModelConfig = useMemo(
+    () => ({ ...model, assetPath: activeAssetPath }),
+    [activeAssetPath, model]
+  );
+
   return (
     <Canvas
       dpr={canvas.dpr}
@@ -50,13 +87,23 @@ export default function HeroCanvas({ config, onModelClick, interactionPreset, in
             background={false}
           />
         )}
-        <ComputerModel
-          key={model.assetPath}
-          modelConfig={model}
-          onModelClick={onModelClick}
-          interactionPreset={interactionPreset}
-          interactionToken={interactionToken}
-        />
+        <ModelErrorBoundary
+          resetKey={activeAssetPath}
+          onError={() => {
+            setAssetIndex((current) => {
+              if (current < assetCandidates.length - 1) return current + 1;
+              return current;
+            });
+          }}
+        >
+          <ComputerModel
+            key={activeAssetPath}
+            modelConfig={activeModelConfig}
+            onModelClick={onModelClick}
+            interactionPreset={interactionPreset}
+            interactionToken={interactionToken}
+          />
+        </ModelErrorBoundary>
         <ContactShadows
           position={lights.contactShadow.position}
           blur={lights.contactShadow.blur}
