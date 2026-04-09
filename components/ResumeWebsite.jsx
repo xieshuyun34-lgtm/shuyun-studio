@@ -508,9 +508,28 @@ export default function ResumeWebsite({
             )}
 
             {data.about && (
-              <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--muted)]">
-                {data.about}
-              </p>
+              <div className="mt-6 max-w-2xl">
+                {data.about.split('\n\n').map((paragraph, idx) => (
+                  idx === 0 ? (
+                    <div key={idx} className="space-y-1">
+                      {paragraph.split('\n').map((line, lineIdx) => (
+                        line.trim() && (
+                          <p 
+                            key={lineIdx} 
+                            className={lineIdx < 2 ? "text-base font-bold leading-8 text-[var(--primary)]" : "text-base leading-8 text-[var(--muted)]"}
+                          >
+                            {line}
+                          </p>
+                        )
+                      ))}
+                    </div>
+                  ) : (
+                    <p key={idx} className="mt-4 text-base leading-8 text-[var(--muted)]">
+                      {paragraph}
+                    </p>
+                  )
+                ))}
+              </div>
             )}
 
             {skills.length > 0 && (
