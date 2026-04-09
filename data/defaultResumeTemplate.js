@@ -44,7 +44,7 @@ export const defaultResumeTemplate = {
   profileCustom3Title: "",
   profileCustom3Value: "",
   interactionAudio: null,
-  aboutMedia: { url: "/hero/base.png", type: "image" },
+  aboutMedia: { url: "/hero/自拍2.jpg", type: "image" },
   mediaItems: [
     { type: "image", url: "/honors/20f3ac82483c46f0f0821ece39ed027e.jpg" },
     { type: "image", url: "/honors/0126f9f2aa4f9f991560bfab60a4db25.jpg" },
