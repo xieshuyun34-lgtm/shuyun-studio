@@ -1,106 +1,62 @@
 const TEMPLATE_VERSION = "lina-singer-20260308-clean";
-const MEDIA_BASE = "/placeholders";
 export const defaultPublishedSlug = "lina-live";
-
-const mediaItem = (name) => ({
-  type: "image",
-  name,
-  url: `${MEDIA_BASE}/${name}`,
-});
 
 export const defaultResumeTemplate = {
   __templateVersion: TEMPLATE_VERSION,
-  name: "LINA",
+  name: "Sylvie",
   tagline: "独立唱作歌手，擅长电子流行、情绪叙事与现场舞台表达。",
   about:
-    "LINA 是一名独立唱作歌手，作品游走在电子流行与抒情舞曲之间。她用电影感的歌词、克制的声线和层层推进的节奏去写夜色、海风、告别与重新出发。过去两年，她持续打磨单曲、舞台编排与视觉内容，希望把每一次演出都变成完整而有呼吸感的现场体验。",
+    "我是谢树云，本科攻读财务管理专业，与25年炙热的夏天毕业，短暂从事过HR的岗位。回顾在校学生干部经历还是社会工作经历，可以复盘出自己的闪光点与不足之处。\n闪光点：1、目标感强：mbti是一个j人，喜欢做计划，也享受目标被完成的过程；2、抗压能力不错：可以多任务进行工作；3、为人真诚、友善：喜欢与人交流、享受与人思想碰撞的过程；4、具有终身学习的意识：不管是对专业技能的学习，还是业余爱好的学习，不会随着年龄与琐事的影响而消磨。因为终身学习即是对这个世界保持好奇心，它是对这个社会、时代最好的链接渠道。\n不足之处：时有的完美主义：因为想要足够好，而耽误先要有才能好。已经意识到这个问题的存在，遇到这种情况也会提醒自己不要犯这种错误。",
   experiences:
-    "2025 - 至今 | 独立唱作歌手 | LINA Studio | 持续发布单曲与现场影像，完成小型剧场演出、短视频 live session 与视觉企划。\n2024 - 2025 | 驻场主唱 | Blue Hour Live House | 以电子流行与抒情翻唱为核心曲目，建立稳定舞台风格与观众记忆点。\n2023 - 2024 | 词曲创作 / Demo 制作 | Midnight Room | 完成首张个人 EP 的词曲写作、编曲沟通与录音统筹。",
+    "2025.10-2025.12 丨人事行政丨韩蕾（上海）科技有限公司丨\n1.招聘执行支持：支持招聘工作执行参与3+个岗位招聘流程，协助招聘渠道维护、简历筛选200+份、面试安排40场。2.人事数据维护：参与人力资源系统与数据维护，更新员工信息、花名册及人事台账，确保人事数据准确率100%3.制度与绩效规则支持：协助整理绩效考核相关制度与管理规则，参与绩效指标口径梳理与说明，完成3份规则类文档。\n2025.03-2025.05丨实习会计助理丨广州敖贸商贸有限公司丨\n1.凭证整理：审核凭证及其附件，依据各类单据所需的资料进行整合，累计处理凭证400张。2.发票开具：负责公司日常发票开具，整理审核发票开具的相关资料，累计处理发票300张。",
   skills:
-    "唱作, 现场演出, 录音, 和声编写, 舞台编排, 视觉概念, 短视频 live session, 乐队排练, 情绪叙事, 电子流行",
-  awards:
-    "2025 | 巡演主视觉 Banner | Summer Blue Live Set | 用轮播图片展示现场海报、排练片段与舞台氛围。\n2024 | 单曲发行 Banner | Midnight Echo | 聚合单曲封面、幕后花絮与社交传播视觉。\n2024 | 媒体采访 Banner | City Pop Weekly | 展示人物照片、演出抓拍与主题视觉素材。",
-  projects:
-    "Midnight Echo | 电子流行单曲，围绕夜晚、告别与重新出发展开。\nBlue Hour Live Session | 以 live session 形式重组代表作品，强化现场呼吸感与镜头叙事。\nSea Fog EP | 三首歌组成的概念 EP，把海风、失眠与情绪回响写进合成器与鼓点里。\nAfterglow Stage Film | 结合舞台排练、动作设计与影像剪辑的短片式演出企划。",
+    "熟练word/ppt/excel、用友软件、Power BI、了解SQL基础语法、熟练使用ChatGPT、Gemini、Claude Code、Codex等AI辅助工具\n证书：初级会计师证、大学英语四级",
+  awards: "",
+  projects: "",
   projectItems: [
     {
       period: "2025",
-      title: "Midnight Echo",
-      subtitle: "Single · Electro-pop",
+      title: "招聘流程支持",
+      subtitle: "人事行政 | 韩蕾（上海）科技有限公司",
       summary:
-        "主打单曲围绕夜色、告别与重新出发展开，用轻电子与抒情旋律构建深夜氛围。",
+        "参与 3+ 个岗位招聘流程，完成简历筛选、面试安排与渠道维护。",
       details:
-        "《Midnight Echo》是当前阶段的代表作品，编曲上用呼吸感更强的节奏、逐层推进的合成器与留白感的人声段落，去表达夜晚里迟迟没有说出口的话。",
-      media: mediaItem("project-midnight.svg"),
+        "支持招聘执行，累计筛选简历 200+ 份，安排面试 40 场，并参与人事数据维护与绩效规则文档整理。",
+      media: null,
     },
     {
       period: "2025",
-      title: "Blue Hour Live Session",
-      subtitle: "Live Session · Visual Performance",
+      title: "财务凭证与发票处理",
+      subtitle: "实习会计助理 | 广州敖贸商贸有限公司",
       summary:
-        "以 live session 的方式重组代表作品，把排练室、现场收音和镜头运动统一到一套情绪节奏里。",
+        "完成凭证审核整理与日常发票开具，支撑基础财务流程。",
       details:
-        "这一组内容更强调现场呼吸感与人与空间的距离感：不是追求大而满的表演，而是在更克制的编排里，让人声、乐手和画面都留下足够的情绪余韵。",
-      media: mediaItem("project-bluehour.svg"),
+        "累计处理凭证 400 张、发票 300 张，协助完成资料整合、单据审核与日常财务记录维护。",
+      media: null,
     },
     {
-      period: "2024",
-      title: "Sea Fog EP",
-      subtitle: "EP · Night Stories",
+      period: "2025",
+      title: "模拟母婴市场销售分析",
+      subtitle: "数据分析练习",
       summary:
-        "三首歌组成的概念 EP，把海风、失眠、回望与重启写进合成器、鼓点和低饱和色彩里。",
+        "围绕销售趋势、品类表现与区域分布完成数据分析与展示练习。",
       details:
-        "《Sea Fog》像一段完整的夜间旅程：从第一首歌的轻微不安，到第二首歌的自我对话，再到最后一首歌的重新出发，整张 EP 更像一场带有电影镜头感的城市漫游。",
-      media: mediaItem("project-seafog.svg"),
-    },
-    {
-      period: "2024",
-      title: "Afterglow Stage Film",
-      subtitle: "Stage Film · Motion Visual",
-      summary:
-        "把排练、动作设计、镜头语言与舞台灯光整合成一支短片式演出企划。",
-      details:
-        "这组视觉内容延续了 LINA 目前的舞台气质：安静、冷感、克制，但又保留足够明显的情绪起伏。它既是演出片段，也能作为单曲传播和社交平台内容的延展母体。",
-      media: mediaItem("project-afterglow.svg"),
+        "从数据清洗到结果呈现梳理重点差异，提升了数据分析、信息组织与表达能力。",
+      media: null,
     },
   ],
-  profilePosition: "独立唱作歌手 / Live Performer",
-  profileEmail: "booking@lina-music.com",
-  profileCustom1Title: "风格",
-  profileCustom1Value: "电子流行、抒情舞曲、夜色叙事",
-  profileCustom2Title: "演出",
-  profileCustom2Value: "剧场专场、live house、品牌活动与影像化现场",
-  profileCustom3Title: "合作",
-  profileCustom3Value: "演出邀约、合作写歌、品牌联动与视觉企划",
+  profilePosition: "人事行政 / 会计助理",
+  profileEmail: "",
+  profileCustom1Title: "技能",
+  profileCustom1Value: "Word / PPT / Excel / Power BI / AI 工具",
+  profileCustom2Title: "证书",
+  profileCustom2Value: "初级会计师证 / 大学英语四级",
+  profileCustom3Title: "优势",
+  profileCustom3Value: "目标感强 / 抗压 / 真诚沟通 / 终身学习",
   interactionAudio: null,
-  aboutMedia: mediaItem("portrait-placeholder.svg"),
-  mediaItems: [
-    mediaItem("banner-stage.svg"),
-    mediaItem("banner-portrait.svg"),
-    mediaItem("banner-wave.svg"),
-    mediaItem("banner-notes.svg"),
-    mediaItem("banner-poster.svg"),
-    mediaItem("banner-lights.svg"),
-  ],
-  customSections: [
-    {
-      title: "Live Visual Notes",
-      content:
-        "这里收录近阶段的艺人照片、live session 截图与舞台视觉，方便作为媒体包、演出海报和社交平台内容使用。",
-      mediaItems: [
-        mediaItem("banner-poster.svg"),
-        mediaItem("banner-lights.svg"),
-        mediaItem("project-midnight.svg"),
-        mediaItem("project-bluehour.svg"),
-      ],
-    },
-    {
-      title: "Moodboard",
-      content:
-        "从排练室、海边、公路与冷暖光影提炼视觉气质，持续延展 LINA 的现场美学与内容封面语言。",
-      mediaItems: [],
-    },
-  ],
+  aboutMedia: null,
+  mediaItems: [],
+  customSections: [],
 };
 
 export const defaultResumeTemplateVersion = TEMPLATE_VERSION;
@@ -126,19 +82,18 @@ export function buildTemplateDraft(saved) {
   }
 
   if (Array.isArray(saved.projectItems) && saved.projectItems.length > 0) {
-    base.projectItems = base.projectItems.map((item, index) => {
-      const preservedMedia = saved.projectItems[index]?.media;
-      return preservedMedia?.url ? { ...item, media: cloneItem(preservedMedia) } : item;
-    });
+    base.projectItems = saved.projectItems.map((item) => cloneItem(item)).filter(Boolean);
   }
 
   if (Array.isArray(saved.customSections) && saved.customSections.length > 0) {
-    base.customSections = base.customSections.map((section, index) => {
-      const preservedMedia = saved.customSections[index]?.mediaItems;
-      return Array.isArray(preservedMedia) && preservedMedia.length > 0
-        ? { ...section, mediaItems: preservedMedia.map((item) => cloneItem(item)).filter(Boolean) }
-        : section;
-    });
+    base.customSections = saved.customSections
+      .map((section) => ({
+        ...section,
+        mediaItems: Array.isArray(section?.mediaItems)
+          ? section.mediaItems.map((item) => cloneItem(item)).filter(Boolean)
+          : [],
+      }))
+      .filter(Boolean);
   }
 
   return base;
