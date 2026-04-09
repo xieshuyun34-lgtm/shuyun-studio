@@ -71,7 +71,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className="landing-page">
-        <HomeHero sceneConfig={homeSceneConfig} burstThemeVariant="gradient" />
+        <HomeHero sceneConfig={homeSceneConfig} />
         <section className="landing-shell">
           <div className="landing-copy soft-panel">
             <p className="landing-kicker">MOTIONCV</p>
