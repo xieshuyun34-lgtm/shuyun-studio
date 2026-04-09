@@ -11,7 +11,7 @@ export const defaultResumeTemplate = {
     "2025.10-2025.12 丨人事行政丨韩蕾（上海）科技有限公司丨\n1.招聘执行支持：支持招聘工作执行参与3+个岗位招聘流程，协助招聘渠道维护、简历筛选200+份、面试安排40场。2.人事数据维护：参与人力资源系统与数据维护，更新员工信息、花名册及人事台账，确保人事数据准确率100%3.制度与绩效规则支持：协助整理绩效考核相关制度与管理规则，参与绩效指标口径梳理与说明，完成3份规则类文档。\n2025.03-2025.05丨实习会计助理丨广州敖贸商贸有限公司丨\n1.凭证整理：审核凭证及其附件，依据各类单据所需的资料进行整合，累计处理凭证400张。2.发票开具：负责公司日常发票开具，整理审核发票开具的相关资料，累计处理发票300张。",
   skills:
     "熟练word/ppt/excel、用友软件、Power BI、了解SQL基础语法、熟练使用ChatGPT、Gemini、Claude Code、Codex等AI辅助工具\n证书：初级会计师证、大学英语四级",
-  awards: "",
+  awards: "荣誉奖项",
   projects: "",
   projectItems: [
     {
@@ -45,7 +45,14 @@ export const defaultResumeTemplate = {
   profileCustom3Value: "目标感强 / 抗压 / 真诚沟通 / 终身学习",
   interactionAudio: null,
   aboutMedia: null,
-  mediaItems: [],
+  mediaItems: [
+    { type: "image", url: "/honors/20f3ac82483c46f0f0821ece39ed027e.jpg" },
+    { type: "image", url: "/honors/0126f9f2aa4f9f991560bfab60a4db25.jpg" },
+    { type: "image", url: "/honors/87068d3369c838baa2bc7f676b904760.jpg" },
+    { type: "image", url: "/honors/338776e5054101379400e5321123fee7.jpg" },
+    { type: "image", url: "/honors/dbb6efa7793d1612e5e831abef319495.jpg" },
+    { type: "image", url: "/honors/f5fe30f8c5369092a41cc2b7658e56bc.jpg" },
+  ],
   customSections: [],
 };
 
